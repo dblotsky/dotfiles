@@ -1,6 +1,7 @@
+
 [user]
-  name = Jamie Wong
-  email = jamie.lf.wong@gmail.com
+  name = Dmitry Blotsky
+  email = dmitry.blotsky@gmail.com
 
 [color]
   branch = auto
@@ -44,10 +45,6 @@
 
   # Detect renames as well as copies
   renames = copies
-
-[push]
-  # Push the current branch to its upstream branch if no refspec given, instead of all branches (the default)
-  default = upstream
 
 [difftool]
   prompt = false
