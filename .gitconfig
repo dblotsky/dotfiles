@@ -28,6 +28,7 @@
   ire = rebase -i
   s = status
   dw = diff --ignore-space-change
+  ci = commit
   pd = diff --patience
   pr = pull --rebase
   sync = "!f() { branch=$(git name-rev --name-only HEAD); echo Syncing $branch with master && git checkout master && git pull --ff-only && git checkout $branch && git rebase master; }; f"
