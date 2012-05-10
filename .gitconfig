@@ -1,4 +1,3 @@
-
 [user]
   name = Dmitry Blotsky
   email = dmitry.blotsky@gmail.com
@@ -27,6 +26,7 @@
   f = fetch
   ire = rebase -i
   s = status
+  st = status
   dw = diff --ignore-space-change
   ci = commit
   pd = diff --patience
