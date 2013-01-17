@@ -1,6 +1,6 @@
-Collection of Jamie Wong's dotfiles (mostly vim stuff)
+Collection of Jamie Wong's dotfiles
 
-You'll need git to get some of this stuff working nicely.
+You'll need git to get some of this stuff working nicely (namely, the vim extensions).
 
 Usage
 -----
@@ -22,11 +22,11 @@ to the top of your real `.bash_profile` or `.bashrc`
 Plugin Management
 -----------------
 
-I'm using [Vundle][] for plugin management here.
+[Vundle][] is being used for plugin management here.
 
 To manage plugins, edit `.vim/.vundle`
 
-To install all the plugins I'm using, boot up vim after
+To install all the plugins, boot up vim after
 running `make` and run
     
     :BundleInstall
