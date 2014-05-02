@@ -7,7 +7,7 @@ Usage
 
 To install this, clone the repo then run `make` in the root directory.
 
-    git clone git://github.com/phleet/dotfiles.git
+    git clone git://github.com/dblotsky/dotfiles.git
     cd dotfiles
     make
 
