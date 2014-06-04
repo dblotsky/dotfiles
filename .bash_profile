@@ -1,9 +1,5 @@
 set -o vi
 
-# virtualenvwrapper
-export WORKON_HOME=$HOME/Developer/environments
-source /usr/local/bin/virtualenvwrapper.sh
-
 # node.js
 export PATH=/usr/local/share/npm/bin:$PATH
 
