@@ -1,4 +1,7 @@
-set -o vi
+# virtualenv
+if [ -e ~/virtualenv_config.bash ]; then
+    source ~/virtualenv_config.bash
+fi
 
 # node.js
 export PATH=/usr/local/share/npm/bin:$PATH
@@ -40,4 +43,4 @@ function git_ps1
 export PATH=~/bin:$PATH
 export CLICOLOR=1
 export EDITOR=/usr/bin/vim
-export PS1="(\[\e[1;33m\]\h\[\e[m\]) \[\e[32m\]\$(git_ps1)\[\e[33m\]\$PWD\[\e[m\]\n╰ ─> "
+export PS1="(\[\e[1;33m\]\[\h\]\[\e[m\]) \[\e[32m\]\[\$(git_ps1)\]\[\e[33m\]\$PWD\[\e[m\]\n╰ -> "
