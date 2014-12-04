@@ -3,21 +3,25 @@ if [ -e ~/virtualenv_config.bash ]; then
     source ~/virtualenv_config.bash
 fi
 
-# node.js
-export PATH=/usr/local/share/npm/bin:$PATH
-
 # aliases
 alias g="git"
+alias such="git"
+alias very="git"
+
 alias l="ls -FlaGh"
+alias ll="l"
+alias ls-la="ls -la"
 alias pyserve="python -m SimpleHTTPServer"
 alias space="du -hs .[!.]* *"
+alias cd..="cd .."
+alias cd.="cd ."
+alias ccd="cd"
 
 # directory marking
 source ~/jump.bash
 
 # Git
 source ~/git-completion.bash
-# source ~/autojmp.bash
 
 export GIT_PS1_SHOWDIRTYSTATE=true
 export GIT_PS1_SHOWSTASHSTATE=true
