@@ -30,6 +30,10 @@
   dw = diff --ignore-space-change
   ci = commit
   pd = diff --patience
+  b = branch -vvv
+  d = diff
+  dc = diff --cached
+  r = remote -vvv
   pr = pull --rebase
   sync = "!f() { branch=$(git name-rev --name-only HEAD); echo Syncing $branch with master && git checkout master && git pull --ff-only && git checkout $branch && git rebase master; }; f"
 
