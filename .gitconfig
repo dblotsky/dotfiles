@@ -35,6 +35,7 @@
   dc = diff --cached
   r = remote -vvv
   pr = pull --rebase
+  fap = fetch --all --prune
   sync = "!f() { branch=$(git name-rev --name-only HEAD); echo Syncing $branch with master && git checkout master && git pull --ff-only && git checkout $branch && git rebase master; }; f"
 
 [core]
