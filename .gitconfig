@@ -56,4 +56,4 @@
   prompt = false
 
 [push]
-	default = matching
+	default = simple
