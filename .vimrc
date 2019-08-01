@@ -1,4 +1,5 @@
 syntax on
+set cursorline
 
 set mouse=a
 
