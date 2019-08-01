@@ -24,8 +24,9 @@ fi
 alias g="git"
 alias such="git"
 alias very="git"
+alias gl="git pull"
 
-alias l="ls -FlaGh"
+alias l="ls -FlaG"
 alias ll="l"
 alias ls-la="ls -la"
 alias pyserve="python -m SimpleHTTPServer"
