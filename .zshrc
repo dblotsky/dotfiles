@@ -1,0 +1,1 @@
+[[ -e ~/.zprofile ]] && . ~/.zprofile

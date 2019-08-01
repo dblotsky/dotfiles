@@ -1,10 +1,23 @@
-SHELL := /bin/bash
+FILES = \
+	.bash_profile \
+	.bashrc \
+	.git-completion.sh \
+	.git-ps1.sh \
+	.gitconfig \
+	.gitignore_global \
+	.inputrc \
+	.jump.sh \
+	.profile \
+	.vimrc \
+	.virtualenv_config.sh \
+	.zprofile \
+	.zshrc \
 
-all: submodules link
+LINKS = $(addprefix $(HOME)/,$(FILES))
 
-link: .vim .vimrc .gvimrc .ackrc .gitconfig .screenrc .ctags .gitignore_global .bash_profile jump.bash git-completion.bash virtualenv_config.bash
-	$(foreach file, $^, ln -s $(CURDIR)/$(file) ~; )
+default all: link
 
-submodules:
-	git submodule init
-	git submodule update
+link: $(LINKS)
+
+$(HOME)/%:
+	ln -s $(PWD)/$* $(HOME)
