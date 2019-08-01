@@ -1,16 +1,8 @@
 syntax on
 
-let g:syntastic_auto_loc_list=0
-let g:syntastic_enable_signs=1
 set mouse=a
 
 filetype off
-
-" Set up Vundle
-" This also includes all of the plugins I use
-"
-" Run :BundleInstall to install all of the plugins
-source ~/.vim/.vundle
 
 set autoread
 set autowrite
@@ -37,8 +29,6 @@ set ruler       "Display Cursor Position
 set title       "Display filename in titlebar
 set titleold=   "Prevent the "Thanks for flying Vim"
 set nohlsearch
-
-set backupdir=/Users/jlfwong/.vim/backup/,.
 
 set incsearch   "Display search resultings as you type
 set ignorecase
@@ -76,7 +66,6 @@ set statusline+=%w   " Preview window flag.
 set statusline+=\    " Space.
 
 set statusline+=%#redbar#                " Highlight the following as a warning.
-set statusline+=%{SyntasticStatuslineFlag()} " Syntastic errors.
 set statusline+=%*                           " Reset highlighting.
 
 set statusline+=%=   " Right align.
@@ -154,12 +143,6 @@ set completeopt=longest,menuone
 set omnifunc=syntaxcomplete#Complete
 inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-
-" SnipMate
-let g:snippets_dir="~/.vim/snippets/,~/.vim/bundle/snipmate.vim/snippets/"
-ino <silent> <c-r><tab> <c-r>=TriggerSnippet()<cr>
-snor <silent> <c-r><tab> <esc>i<right><c-r>=TriggerSnippet()<cr>
-ino <silent> <c-r><c-s> <c-r>=ShowAvailableSnips()<cr>
 
 " Search for selected text, forwards or backwards.
 " http://vim.wikia.com/wiki/Search_for_visually_selected_text
