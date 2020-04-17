@@ -1,7 +1,7 @@
 syntax on
 set cursorline
 
-set mouse=a
+" set mouse=a
 
 filetype off
 
