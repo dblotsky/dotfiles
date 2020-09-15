@@ -25,14 +25,26 @@ shopt -s histappend
 
 export PATH="${HOME}/bin:${PATH}"
 
-# Python 2.7
+# Python 2
 export PATH="${HOME}/Library/Python/2.7/bin:/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"
 
-# Python 3.6
+# Python 3
 export PATH="${HOME}/Library/Python/3.6/bin:/Library/Frameworks/Python.framework/Versions/3.6/bin:${PATH}"
+export PATH="${HOME}/Library/Python/3.7/bin:/Library/Frameworks/Python.framework/Versions/3.7/bin:${PATH}"
 
 export CLICOLOR=1
 export EDITOR=/usr/bin/vim
+
+# Eternal bash history.
+# ---------------------
+# Undocumented feature which sets the size to "unlimited".
+# http://stackoverflow.com/questions/9457233/unlimited-bash-history
+export HISTFILESIZE=9999999
+export HISTSIZE=9999999
+
+# Change the file location because certain bash sessions truncate .bash_history file upon close.
+# http://superuser.com/questions/575479/bash-history-truncated-to-500-lines-on-each-login
+export HISTFILE="${HOME}/.bash_eternal_history"
 
 # prompt
 if [[ "${ZSH_NAME}" != "" ]]; then
@@ -45,23 +57,36 @@ fi
 # functions
 ##############################
 
-function bake {
+bake() {
     make $@
     tput bel
 }
 
-function forget {
+forget() {
     local substring=$1
     sed -i '' -E "/^${substring}.*/d" "${HOME}/.ssh/known_hosts"
 }
 
-function watch {
+WATCH_INTERVAL=1
+
+watch() {
     CLEAR='\033[J'
     TOP='\033[1;1H'
     while true; do
         output=$(eval $@)
         echo -e "$TOP$CLEAR$output"
-        sleep 1
+        sleep $WATCH_INTERVAL
+    done
+}
+
+pythons() {
+    for tool in {python,pip}{,2,2.7,3,3.6,3.7}; do
+        local where=$(which "${tool}")
+        local version=""
+        if [ ! -z "${where}" ]; then
+            version=$("${tool}" --version 2>&1)
+        fi
+        echo "${tool},${where},${version}"
     done
 }
 
@@ -70,6 +95,8 @@ function watch {
 ##############################
 
 alias g="git"
+alias gl="git pull"
+alias gs="git status"
 alias such="git"
 alias very="git"
 alias gl="git pull"

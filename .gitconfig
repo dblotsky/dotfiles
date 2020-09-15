@@ -44,6 +44,7 @@
 
 [merge]
   tool = vimdiff
+  renamelimit = 20000
 
 [diff]
   # Use mnemonic prefixes (index, work tree, commit, object) instead of the standard a and b notation
